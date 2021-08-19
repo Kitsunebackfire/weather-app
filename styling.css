@@ -1,0 +1,96 @@
+body {
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.searchContainer {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.appTitleContainer {
+  position: relative;
+}
+
+#appTitle {
+  position: absolute;
+  bottom: 20px;
+}
+
+.mainContainer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  border: 1px solid red;
+  border-radius: 5px;
+
+  height: 220px;
+  width: 370px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.7fr 1fr 2fr;
+
+  padding: 10px;
+}
+
+.appTitleContainer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#weatherDescription {
+  font-size: 1rem;
+  font-family: "Spartan", sans-serif;
+  padding-top: 15px;
+  padding-left: 1px;
+}
+
+#location {
+  font-size: 1.7rem;
+  font-family: "Spartan", sans-serif;
+}
+
+.weatherContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: 1fr;
+}
+
+.tempContainer {
+  position: relative;
+  border-right: 3px solid red;
+  font-family: "Comic Neue", cursive;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#displayedTemp {
+  font-size: 7rem;
+  padding-right: 10px;
+}
+
+#fahrenSymbol {
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+.secondaryWeatherInfoContainer {
+  font-family: "Spartan", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding-left: 20px;
+  padding-top: 20px;
+}
