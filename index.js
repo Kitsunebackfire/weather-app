@@ -1,5 +1,6 @@
 const searchForm = document.getElementById("searchForm");
 const searchFormInput = document.getElementById("searchInput");
+const errorMessage = document.querySelector("small");
 
 const displayedWeatherDescription =
   document.getElementById("weatherDescription");
@@ -25,6 +26,7 @@ async function retreiveWeather(location) {
 
 async function showWeather(weatherData) {
   try {
+    errorMessage.innerText = "";
     const passedThroughData = await weatherData;
     console.log(weatherData);
     // location data
@@ -53,6 +55,7 @@ async function showWeather(weatherData) {
     );
   } catch (error) {
     console.log(`${error}, weather data not passed through to show info`);
+    errorMessage.innerText = "Please enter a valid City";
   }
 }
 
@@ -84,9 +87,14 @@ function getInput(searchFormInput) {
   showWeather(retreiveWeather(searchFormInputValue));
 }
 
+function clearInput() {
+  searchFormInput.value = "";
+}
+
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   getInput(searchFormInput);
+  clearInput();
 });
 
 showWeather(retreiveWeather("Keller"));
